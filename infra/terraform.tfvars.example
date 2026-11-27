@@ -1,0 +1,5 @@
+region            = "cn-north-4"
+project_name      = "data-integration-click-logs"
+domain_name       = "your-account-name"
+geminidb_password = "your-db-password"
+obs_bucket_name   = "data-integration-click-logs-parquet"

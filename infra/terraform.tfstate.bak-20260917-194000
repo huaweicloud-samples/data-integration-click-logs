@@ -1,0 +1,1540 @@
+{
+  "version": 4,
+  "terraform_version": "1.15.8",
+  "serial": 74,
+  "lineage": "6fa0842a-1768-fd95-2cdd-94e7d521d5e8",
+  "outputs": {
+    "apig_api_url": {
+      "value": "https:///clicklogger",
+      "type": "string"
+    },
+    "functiongraph_click_logger_authorizer_urn": {
+      "value": null,
+      "type": "string"
+    },
+    "functiongraph_click_logger_stream_urn": {
+      "value": null,
+      "type": "string"
+    },
+    "functiongraph_click_logger_urn": {
+      "value": null,
+      "type": "string"
+    },
+    "geminidb_endpoint": {
+      "value": "10.0.1.155",
+      "type": "string",
+      "sensitive": true
+    },
+    "geminidb_instance_id": {
+      "value": "f1dab2dfe4aa4a2993d2bd5cf72047aein06",
+      "type": "string"
+    },
+    "kafka_bootstrap_address": {
+      "value": "10.0.1.241:9092,10.0.1.113:9092,10.0.1.181:9092",
+      "type": "string"
+    },
+    "kafka_topic_name": {
+      "value": "data-integration-click-logs-topic",
+      "type": "string"
+    },
+    "lts_group_id": {
+      "value": "ca184672-735f-49cc-bfe7-f0216181ae12",
+      "type": "string"
+    },
+    "obs_bucket_name": {
+      "value": "data-integration-click-logs-parquet",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "huaweicloud_dms_kafka_flavors",
+      "name": "click_log",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arch_type": null,
+            "availability_zones": [
+              "cn-north-4a"
+            ],
+            "charging_mode": null,
+            "flavor_id": null,
+            "flavors": [
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "postPaid",
+                  "prePaid"
+                ],
+                "id": "c6.2u4g.cluster",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.2u4g.cluster",
+                    "max_bandwidth_per_broker": 200,
+                    "max_broker": 30,
+                    "max_consumer_per_broker": 20,
+                    "max_partition_per_broker": 250,
+                    "max_storage_per_node": 10000,
+                    "max_tps_per_broker": 30000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c7.large.2"
+              },
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "prePaid"
+                ],
+                "id": "c6.2u4g.cluster.beta",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.2u4g.cluster.beta",
+                    "max_bandwidth_per_broker": 100,
+                    "max_broker": 30,
+                    "max_consumer_per_broker": 20,
+                    "max_partition_per_broker": 250,
+                    "max_storage_per_node": 10000,
+                    "max_tps_per_broker": 30000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c6.large.2"
+              },
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "postPaid",
+                  "prePaid"
+                ],
+                "id": "c6.4u8g.cluster",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.4u8g.cluster",
+                    "max_bandwidth_per_broker": 100,
+                    "max_broker": 30,
+                    "max_consumer_per_broker": 100,
+                    "max_partition_per_broker": 500,
+                    "max_storage_per_node": 20000,
+                    "max_tps_per_broker": 100000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c7.xlarge.2"
+              },
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "prePaid"
+                ],
+                "id": "c6.4u8g.cluster.beta",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.4u8g.cluster.beta",
+                    "max_bandwidth_per_broker": 100,
+                    "max_broker": 30,
+                    "max_consumer_per_broker": 100,
+                    "max_partition_per_broker": 500,
+                    "max_storage_per_node": 20000,
+                    "max_tps_per_broker": 100000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c6.xlarge.2"
+              },
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "postPaid",
+                  "prePaid"
+                ],
+                "id": "c6.8u16g.cluster",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.8u16g.cluster",
+                    "max_bandwidth_per_broker": 100,
+                    "max_broker": 50,
+                    "max_consumer_per_broker": 150,
+                    "max_partition_per_broker": 1000,
+                    "max_storage_per_node": 30000,
+                    "max_tps_per_broker": 150000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c7.2xlarge.2"
+              },
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "postPaid",
+                  "prePaid"
+                ],
+                "id": "c6.12u24g.cluster",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.12u24g.cluster",
+                    "max_bandwidth_per_broker": 100,
+                    "max_broker": 50,
+                    "max_consumer_per_broker": 200,
+                    "max_partition_per_broker": 1500,
+                    "max_storage_per_node": 30000,
+                    "max_tps_per_broker": 200000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c7.3xlarge.2"
+              },
+              {
+                "arch_types": [
+                  "X86"
+                ],
+                "charging_modes": [
+                  "postPaid",
+                  "prePaid"
+                ],
+                "id": "c6.16u32g.cluster",
+                "ios": [
+                  {
+                    "availability_zones": [
+                      "cn-north-4b",
+                      "cn-north-4g",
+                      "cn-north-4a"
+                    ],
+                    "storage_spec_code": "dms.physical.storage.ultra.v2",
+                    "type": "evs",
+                    "unavailability_zones": [
+                      "cn-north-4c"
+                    ]
+                  }
+                ],
+                "properties": [
+                  {
+                    "flavor_alias": "kafka.16u32g.cluster",
+                    "max_bandwidth_per_broker": 100,
+                    "max_broker": 50,
+                    "max_consumer_per_broker": 200,
+                    "max_partition_per_broker": 2000,
+                    "max_storage_per_node": 30000,
+                    "max_tps_per_broker": 250000,
+                    "min_broker": 3,
+                    "min_storage_per_node": 100
+                  }
+                ],
+                "support_features": [
+                  {
+                    "name": "connector_obs",
+                    "properties": [
+                      {
+                        "max_node": 10,
+                        "max_task": 10,
+                        "min_node": 2,
+                        "min_task": 1
+                      }
+                    ]
+                  }
+                ],
+                "type": "cluster",
+                "vm_specification": "c7.4xlarge.2"
+              }
+            ],
+            "id": "3791759139",
+            "region": "cn-north-4",
+            "storage_spec_code": "dms.physical.storage.ultra.v2",
+            "type": "cluster",
+            "versions": [
+              "1.1.0",
+              "2.3.0",
+              "2.7",
+              "3.x"
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "huaweicloud_identity_projects",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "2158093176",
+            "name": "cn-north-4",
+            "project_id": null,
+            "projects": [
+              {
+                "enabled": true,
+                "id": "cc2cb3d01b0c46798d77c4cd8ecf6b7e",
+                "name": "cn-north-4"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_apig_group",
+      "name": "click_log_group",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2026-09-17T11:31:24Z",
+            "description": "",
+            "domain_access_enabled": false,
+            "environment": [],
+            "force_destroy": false,
+            "id": "9798705ef7c046ad837e7dcfec756234",
+            "instance_id": "9ffec2f3ed344cf48ea5816fe3a80093",
+            "name": "data-integration-click-logs-group",
+            "region": "cn-north-4",
+            "registration_time": "2026-09-17T11:31:24Z",
+            "update_time": "2026-09-17T11:31:27.699534Z",
+            "updated_at": "2026-09-17T11:31:27.699534Z",
+            "url_domains": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "huaweicloud_apig_instance.click_log_api",
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg",
+            "huaweicloud_vpc.data_integration_click_logs_vpc",
+            "huaweicloud_vpc_subnet.data_integration_click_logs_subnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_apig_instance",
+      "name": "click_log_api",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "availability_zones": [
+              "cn-north-4a"
+            ],
+            "available_zones": null,
+            "bandwidth_size": 0,
+            "create_time": "2026-09-17T16:25:41+08:00",
+            "created_at": "2026-09-17T16:25:41+08:00",
+            "custom_ingress_ports": [],
+            "description": "",
+            "edition": "BASIC",
+            "egress_address": "",
+            "eip_id": null,
+            "elb_ids": [],
+            "enterprise_project_id": "0",
+            "id": "9ffec2f3ed344cf48ea5816fe3a80093",
+            "ingress_address": "",
+            "ingress_bandwidth_charging_mode": "",
+            "ingress_bandwidth_size": 0,
+            "ipv6_enable": false,
+            "loadbalancer_provider": "elb",
+            "maintain_begin": "02:00:00",
+            "maintain_end": "06:00:00",
+            "name": "data-integration-click-logs-apig",
+            "region": "cn-north-4",
+            "security_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "status": "Running",
+            "subnet_id": "edc831d8-3ada-442c-8c9c-a56408668126",
+            "supported_features": [
+              "lts",
+              "gateway_responses",
+              "ratelimit",
+              "request_body_size",
+              "backend_timeout",
+              "app_token",
+              "app_basic",
+              "app_secret",
+              "multi_auth",
+              "route",
+              "sign_basic",
+              "app_route",
+              "backend_client_certificate",
+              "ssl_ciphers",
+              "cors",
+              "app_quota",
+              "app_acl",
+              "real_ip_from_xff",
+              "set_resp_headers",
+              "vpc_backup",
+              "watch_instance",
+              "sign_aes",
+              "mock_status_code_and_header",
+              "vpc_member_port_switch",
+              "backend_retry_count",
+              "custom_log",
+              "real_ip_header_getter",
+              "policy_sys_param",
+              "vpc_name_modifiable",
+              "kafka_log",
+              "breaker",
+              "content_type_configurable",
+              "rate_limit_plugin",
+              "breakerv2",
+              "default_group_host_trustlist",
+              "sm_cipher_type",
+              "policy_cookie_param",
+              "policy_frontend_authorizer_param",
+              "rate_limit_algorithm",
+              "fg_v2",
+              "support_microservice_cse",
+              "support_microservice_cce",
+              "support_microservice_cce_label",
+              "backend_support_sni",
+              "support_http_to_https",
+              "acl_support_domain_id",
+              "custom_auth_header",
+              "mutual_tls",
+              "third_auth",
+              "gzip",
+              "support_microservice_cce_rm_app",
+              "authorizer_context_support_num_bool",
+              "support_grpc",
+              "authorizer_func_v2",
+              "sse_strategy",
+              "fg_support_grpc",
+              "vpc_health_status",
+              "sl_domain_access_setting",
+              "request_custom_config",
+              "gateway_responses_support_header",
+              "backend_support_grpc",
+              "api_uri_no_escape",
+              "support_send_fg_body_base64",
+              "kafka_log_plugin_options",
+              "orchestration",
+              "api_req_param_support_cookie",
+              "support_orchestration_preprocessing",
+              "support_authorizer_retry",
+              "proxy_cache_plugin",
+              "set_resp_headers_v2",
+              "ip_control",
+              "cert_cn_backend_system_param",
+              "sm_backend_channel",
+              "instance_custom_port",
+              "auth_downgrade_enabled",
+              "proxy_mirror_plugin",
+              "new_statistics",
+              "policy_third_authorizer_param",
+              "kafka_log_plugin_call_body_limit",
+              "jwt_auth",
+              "trace_enabled",
+              "oidc_auth",
+              "system_param_custom_log_enabled",
+              "rate_limit_plugin_by_param_key",
+              "breaker_support_downgrade_keys"
+            ],
+            "tags": {},
+            "timeouts": null,
+            "vpc_id": "96df06cd-5609-4eca-91ed-9ae85aa5b2ce",
+            "vpc_ingress_address": "10.0.1.187",
+            "vpcep_service_address": "cn-north-4.apig.ca9ae191-0a6e-46ca-b04e-7eaa079180af",
+            "vpcep_service_name": "apig"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNDAwMDAwMDAwMDAwLCJkZWxldGUiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg",
+            "huaweicloud_vpc.data_integration_click_logs_vpc",
+            "huaweicloud_vpc_subnet.data_integration_click_logs_subnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_dms_kafka_instance",
+      "name": "click_log",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_user": "",
+            "arch_type": null,
+            "auto_renew": null,
+            "availability_zones": [
+              "cn-north-4a"
+            ],
+            "available_zones": [
+              "effdcbc7d4d64a02aa1fa26b42f56533"
+            ],
+            "bandwidth": "kafka.2u4g.cluster * 3 broker",
+            "broker_num": 3,
+            "cert_replaced": false,
+            "charging_mode": "postPaid",
+            "cluster": [
+              {
+                "brokers": [
+                  {
+                    "broker_id": "0",
+                    "health": true,
+                    "host": "10.0.1.241",
+                    "port": 9092
+                  },
+                  {
+                    "broker_id": "1",
+                    "health": true,
+                    "host": "10.0.1.113",
+                    "port": 9092
+                  },
+                  {
+                    "broker_id": "2",
+                    "health": true,
+                    "host": "10.0.1.181",
+                    "port": 9092
+                  }
+                ]
+              }
+            ],
+            "connect_address": "10.0.1.241,10.0.1.113,10.0.1.181",
+            "connector_id": "",
+            "connector_node_num": 0,
+            "created_at": "2026-09-17T19:31:25+08:00",
+            "cross_vpc_accesses": [
+              {
+                "advertised_ip": "10.0.1.113",
+                "lisenter_ip": "10.0.1.113",
+                "listener_ip": "10.0.1.113",
+                "port": 9011,
+                "port_id": "bf0817a6-443b-45c9-9359-7329d8020b11"
+              },
+              {
+                "advertised_ip": "10.0.1.181",
+                "lisenter_ip": "10.0.1.181",
+                "listener_ip": "10.0.1.181",
+                "port": 9011,
+                "port_id": "e35bdab7-d371-4764-b2b9-caee358f629e"
+              },
+              {
+                "advertised_ip": "10.0.1.241",
+                "lisenter_ip": "10.0.1.241",
+                "listener_ip": "10.0.1.241",
+                "port": 9011,
+                "port_id": "e485dd04-2797-4155-aa8b-47a036228bdd"
+              }
+            ],
+            "description": "",
+            "disk_encrypted_enable": false,
+            "disk_encrypted_key": "",
+            "dumping": false,
+            "enable_auto_topic": false,
+            "enable_public_ip": false,
+            "enabled_mechanisms": null,
+            "engine": "kafka",
+            "engine_version": "2.3.0",
+            "enterprise_project_id": "0",
+            "extend_times": 0,
+            "flavor_id": "c6.2u4g.cluster",
+            "id": "5d2f8d22-b6f2-4171-af2c-557bd0cd7c8d",
+            "ipv6_connect_addresses": [],
+            "ipv6_enable": false,
+            "is_logical_volume": true,
+            "kms_encrypted_password": null,
+            "maintain_begin": "02:00:00",
+            "maintain_end": "06:00:00",
+            "management_connect_address": "",
+            "manager_password": null,
+            "manager_user": null,
+            "manegement_connect_address": "",
+            "message_query_inst_enable": true,
+            "name": "data-integration-click-logs-kafka",
+            "network_id": "edc831d8-3ada-442c-8c9c-a56408668126",
+            "new_tenant_ips": null,
+            "node_num": 3,
+            "parameters": [],
+            "partition_num": 750,
+            "password": null,
+            "period": null,
+            "period_unit": null,
+            "pod_connect_address": "214.196.152.168:9080,214.165.206.204:9080,214.198.202.204:9080",
+            "port": 9092,
+            "port_protocol": [
+              {
+                "private_plain_address": "10.0.1.241:9092,10.0.1.113:9092,10.0.1.181:9092",
+                "private_plain_domain_name": "",
+                "private_plain_enable": true,
+                "private_sasl_plaintext_address": "",
+                "private_sasl_plaintext_domain_name": "",
+                "private_sasl_plaintext_enable": false,
+                "private_sasl_ssl_address": "",
+                "private_sasl_ssl_domain_name": "",
+                "private_sasl_ssl_enable": false,
+                "public_plain_address": "",
+                "public_plain_domain_name": "",
+                "public_plain_enable": false,
+                "public_sasl_plaintext_address": "",
+                "public_sasl_plaintext_domain_name": "",
+                "public_sasl_plaintext_enable": false,
+                "public_sasl_ssl_address": "",
+                "public_sasl_ssl_domain_name": "",
+                "public_sasl_ssl_enable": false
+              }
+            ],
+            "port_protocols": [
+              {
+                "private_plain_address": "10.0.1.241:9092,10.0.1.113:9092,10.0.1.181:9092",
+                "private_plain_domain_name": "",
+                "private_plain_enable": true,
+                "private_sasl_plaintext_address": "",
+                "private_sasl_plaintext_domain_name": "",
+                "private_sasl_plaintext_enable": false,
+                "private_sasl_ssl_address": "",
+                "private_sasl_ssl_domain_name": "",
+                "private_sasl_ssl_enable": false,
+                "public_plain_address": "",
+                "public_plain_domain_name": "",
+                "public_plain_enable": false,
+                "public_sasl_plaintext_address": "",
+                "public_sasl_plaintext_domain_name": "",
+                "public_sasl_plaintext_enable": false,
+                "public_sasl_ssl_address": "",
+                "public_sasl_ssl_domain_name": "",
+                "public_sasl_ssl_enable": false
+              }
+            ],
+            "product_id": null,
+            "public_bandwidth": 0,
+            "public_ip_address": [],
+            "public_ip_ids": null,
+            "region": "cn-north-4",
+            "resource_spec_code": "",
+            "retention_policy": "produce_reject",
+            "security_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "security_protocol": null,
+            "ssl_enable": false,
+            "ssl_two_way_enable": false,
+            "status": "RUNNING",
+            "storage_resource_id": "3e4ee691-16ff-4aa9-9934-90e46c09910b",
+            "storage_space": 600,
+            "storage_spec_code": "dms.physical.storage.ultra.v2",
+            "storage_type": "hec",
+            "tags": {
+              "project": "data-integration-click-logs"
+            },
+            "timeouts": null,
+            "type": "cluster",
+            "used_storage_space": 0,
+            "user_id": "064091d5bf9a455d9a0747c4866163d2",
+            "user_name": "GT-dgcmy",
+            "vpc_client_plain": true,
+            "vpc_id": "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "kms_encrypted_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "manager_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "password"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAwLCJkZWxldGUiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "data.huaweicloud_dms_kafka_flavors.click_log",
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg",
+            "huaweicloud_vpc.data_integration_click_logs_vpc",
+            "huaweicloud_vpc_subnet.data_integration_click_logs_subnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_geminidb_instance",
+      "name": "click_log_db",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_control": [
+              {
+                "enabled": "false",
+                "ip_groups": [],
+                "type": "blackList"
+              }
+            ],
+            "actions": [],
+            "auto_renew": null,
+            "availability_zone": "cn-north-4a,cn-north-4b,cn-north-4c",
+            "availability_zone_detail": [],
+            "backup_strategy": [
+              {
+                "keep_days": 7,
+                "start_time": "02:00-03:00"
+              }
+            ],
+            "bucket_name": null,
+            "charging_mode": "postPaid",
+            "cold_storage_size": null,
+            "config_ips": [],
+            "configuration_id": null,
+            "cpu_threshold": 0,
+            "created": "2026-09-17T09:22:44",
+            "data_export_switch": null,
+            "datastore": [
+              {
+                "patch_available": false,
+                "storage_engine": "rocksDB",
+                "type": "dynamodb",
+                "version": "",
+                "whole_version": ""
+              }
+            ],
+            "db_user_name": "rwuser",
+            "dedicated_resource_id": "",
+            "delete_node_list": null,
+            "dual_active_info": [],
+            "enable_force_new": null,
+            "enterprise_project_id": "0",
+            "flavor": [
+              {
+                "num": 3,
+                "size": 100,
+                "spec_code": "geminidb.cassandra.xlarge.4",
+                "storage": "ULTRAHIGH"
+              }
+            ],
+            "groups": [
+              {
+                "id": "dfa533c0144d4bef82d83674c6222376gr06",
+                "nodes": [
+                  {
+                    "availability_zone": "cn-north-4b",
+                    "id": "4aa64796af0b47cbb314c045e1032890no06",
+                    "name": "data-integration-click-logs-db_omtr_priam_node_2",
+                    "private_ip": "10.0.1.124",
+                    "public_ip": "",
+                    "role": "",
+                    "spec_code": "geminidb.cassandra.xlarge.4",
+                    "status": "normal",
+                    "subnet_id": "edc831d8-3ada-442c-8c9c-a56408668126",
+                    "support_reduce": false
+                  },
+                  {
+                    "availability_zone": "cn-north-4c",
+                    "id": "d4a6d5a3cf6e43bdac02ecf717ea1f0bno06",
+                    "name": "data-integration-click-logs-db_omtr_priam_node_3",
+                    "private_ip": "10.0.1.224",
+                    "public_ip": "",
+                    "role": "",
+                    "spec_code": "geminidb.cassandra.xlarge.4",
+                    "status": "normal",
+                    "subnet_id": "edc831d8-3ada-442c-8c9c-a56408668126",
+                    "support_reduce": false
+                  },
+                  {
+                    "availability_zone": "cn-north-4a",
+                    "id": "da320d81a0a74ae6ba76fc5915081dfcno06",
+                    "name": "data-integration-click-logs-db_omtr_priam_node_1",
+                    "private_ip": "10.0.1.43",
+                    "public_ip": "",
+                    "role": "",
+                    "spec_code": "geminidb.cassandra.xlarge.4",
+                    "status": "normal",
+                    "subnet_id": "edc831d8-3ada-442c-8c9c-a56408668126",
+                    "support_reduce": false
+                  }
+                ],
+                "status": "normal",
+                "volume": [
+                  {
+                    "size": "100",
+                    "used": "0.002"
+                  }
+                ]
+              }
+            ],
+            "id": "f1dab2dfe4aa4a2993d2bd5cf72047aein06",
+            "lb_ip_address": "10.0.1.155",
+            "lb_port": null,
+            "maintenance_end_time": "06:00",
+            "maintenance_start_time": "02:00",
+            "mem_threshold": 0,
+            "mode": "Cluster",
+            "name": "data-integration-click-logs-db",
+            "node_limit": 0,
+            "node_switch_option": false,
+            "overload_node_threshold": 0,
+            "parameters": [],
+            "password": "AccelBenchGmdb2026!",
+            "period": null,
+            "period_unit": null,
+            "policy": [],
+            "port": 8000,
+            "product_type": "",
+            "region": "cn-north-4",
+            "second_level_monitoring_enabled": "false",
+            "security_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "ssl_option": null,
+            "status": "normal",
+            "step": 0,
+            "subnet_id": "edc831d8-3ada-442c-8c9c-a56408668126",
+            "switch_option": "off",
+            "tags": {},
+            "time_zone": "",
+            "timeouts": null,
+            "updated": "2026-09-17T09:22:44",
+            "vpc_id": "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "password"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInVwZGF0ZSI6NzIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg",
+            "huaweicloud_vpc.data_integration_click_logs_vpc",
+            "huaweicloud_vpc_subnet.data_integration_click_logs_subnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_lts_group",
+      "name": "click_log_lts",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2026-09-17T11:17:11+08:00",
+            "enterprise_project_id": "",
+            "group_name": "data-integration-click-logs-lts",
+            "id": "ca184672-735f-49cc-bfe7-f0216181ae12",
+            "region": "cn-north-4",
+            "tags": {},
+            "ttl_in_days": 7
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_lts_stream",
+      "name": "authorizer",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2026-09-17T11:17:11+08:00",
+            "enterprise_project_id": "0",
+            "filter_count": 0,
+            "group_id": "ca184672-735f-49cc-bfe7-f0216181ae12",
+            "id": "40ff30cc-8b56-42c1-9fd5-a2e46fad70d5",
+            "is_favorite": false,
+            "region": "cn-north-4",
+            "stream_name": "click-logger-authorizer",
+            "tags": {},
+            "ttl_in_days": -1
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "huaweicloud_lts_group.click_log_lts"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_lts_stream",
+      "name": "business",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2026-09-17T11:17:12+08:00",
+            "enterprise_project_id": "0",
+            "filter_count": 0,
+            "group_id": "ca184672-735f-49cc-bfe7-f0216181ae12",
+            "id": "c1eabc83-a0f7-4e29-a1cd-c7f8660141b9",
+            "is_favorite": false,
+            "region": "cn-north-4",
+            "stream_name": "click-logger-business",
+            "tags": {},
+            "ttl_in_days": -1
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "huaweicloud_lts_group.click_log_lts"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_lts_stream",
+      "name": "consumer",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2026-09-17T11:17:12+08:00",
+            "enterprise_project_id": "0",
+            "filter_count": 0,
+            "group_id": "ca184672-735f-49cc-bfe7-f0216181ae12",
+            "id": "4539420b-8eb6-4ed9-a989-ed37dbcd4322",
+            "is_favorite": false,
+            "region": "cn-north-4",
+            "stream_name": "click-logger-consumer",
+            "tags": {},
+            "ttl_in_days": -1
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "huaweicloud_lts_group.click_log_lts"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_networking_secgroup",
+      "name": "data_integration_click_logs_sg",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2026-09-17T03:17:11Z",
+            "delete_default_rules": null,
+            "description": "click log ingestion security group",
+            "enterprise_project_id": "0",
+            "id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "name": "data-integration-click-logs-sg",
+            "region": "cn-north-4",
+            "rules": [
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "id": "53236e10-bf16-4b7d-aecd-aa43a442e134",
+                "port_range_max": 65535,
+                "port_range_min": 1,
+                "ports": "1-65535",
+                "priority": 1,
+                "protocol": "tcp",
+                "remote_address_group_id": "",
+                "remote_group_id": "",
+                "remote_ip_prefix": "10.0.0.0/16"
+              },
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "egress",
+                "ethertype": "IPv4",
+                "id": "d1c785c1-0a3c-40f9-a77e-5c7e0197147a",
+                "port_range_max": 65535,
+                "port_range_min": 1,
+                "ports": "1-65535",
+                "priority": 1,
+                "protocol": "tcp",
+                "remote_address_group_id": "",
+                "remote_group_id": "",
+                "remote_ip_prefix": "0.0.0.0/0"
+              },
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "egress",
+                "ethertype": "IPv4",
+                "id": "1379c323-d953-47cc-95c0-d9086865dbde",
+                "port_range_max": 65535,
+                "port_range_min": 1,
+                "ports": "1-65535",
+                "priority": 1,
+                "protocol": "udp",
+                "remote_address_group_id": "",
+                "remote_group_id": "",
+                "remote_ip_prefix": "0.0.0.0/0"
+              },
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "egress",
+                "ethertype": "IPv6",
+                "id": "fc3f8ff3-4f75-4b43-b3d8-a1ad27525629",
+                "port_range_max": 0,
+                "port_range_min": 0,
+                "ports": "",
+                "priority": 100,
+                "protocol": "",
+                "remote_address_group_id": "",
+                "remote_group_id": "",
+                "remote_ip_prefix": ""
+              },
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "egress",
+                "ethertype": "IPv4",
+                "id": "d060df37-8f52-406e-8c18-a9a162b9ae9c",
+                "port_range_max": 0,
+                "port_range_min": 0,
+                "ports": "",
+                "priority": 100,
+                "protocol": "",
+                "remote_address_group_id": "",
+                "remote_group_id": "",
+                "remote_ip_prefix": ""
+              },
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "ingress",
+                "ethertype": "IPv6",
+                "id": "cb9ab819-7814-4aee-9a86-48344eb2c5ee",
+                "port_range_max": 0,
+                "port_range_min": 0,
+                "ports": "",
+                "priority": 100,
+                "protocol": "",
+                "remote_address_group_id": "",
+                "remote_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+                "remote_ip_prefix": ""
+              },
+              {
+                "action": "allow",
+                "description": "",
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "id": "dff627a7-61aa-41e5-972a-3490de7e6915",
+                "port_range_max": 0,
+                "port_range_min": 0,
+                "ports": "",
+                "priority": 100,
+                "protocol": "",
+                "remote_address_group_id": "",
+                "remote_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+                "remote_ip_prefix": ""
+              }
+            ],
+            "tags": {},
+            "timeouts": null,
+            "updated_at": "2026-09-17T03:17:11Z"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjo2MDAwMDAwMDAwMDB9fQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_networking_secgroup_rule",
+      "name": "allow_egress_tcp",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "allow",
+            "description": "",
+            "direction": "egress",
+            "ethertype": "IPv4",
+            "id": "d1c785c1-0a3c-40f9-a77e-5c7e0197147a",
+            "port_range_max": 65535,
+            "port_range_min": 1,
+            "ports": "1-65535",
+            "priority": 1,
+            "protocol": "tcp",
+            "region": "cn-north-4",
+            "remote_address_group_id": "",
+            "remote_group_id": "",
+            "remote_ip_prefix": "0.0.0.0/0",
+            "security_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_networking_secgroup_rule",
+      "name": "allow_egress_udp",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "allow",
+            "description": "",
+            "direction": "egress",
+            "ethertype": "IPv4",
+            "id": "1379c323-d953-47cc-95c0-d9086865dbde",
+            "port_range_max": 65535,
+            "port_range_min": 1,
+            "ports": "1-65535",
+            "priority": 1,
+            "protocol": "udp",
+            "region": "cn-north-4",
+            "remote_address_group_id": "",
+            "remote_group_id": "",
+            "remote_ip_prefix": "0.0.0.0/0",
+            "security_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_networking_secgroup_rule",
+      "name": "allow_internal",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "allow",
+            "description": "",
+            "direction": "ingress",
+            "ethertype": "IPv4",
+            "id": "53236e10-bf16-4b7d-aecd-aa43a442e134",
+            "port_range_max": 65535,
+            "port_range_min": 1,
+            "ports": "1-65535",
+            "priority": 1,
+            "protocol": "tcp",
+            "region": "cn-north-4",
+            "remote_address_group_id": "",
+            "remote_group_id": "",
+            "remote_ip_prefix": "10.0.0.0/16",
+            "security_group_id": "865201c6-f845-4bfe-88aa-2a2e4bee3366",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "huaweicloud_networking_secgroup.data_integration_click_logs_sg"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_obs_bucket",
+      "name": "click_log_parquet",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acl": "private",
+            "bucket": "data-integration-click-logs-parquet",
+            "bucket_domain_name": "data-integration-click-logs-parquet.obs.cn-north-4.myhuaweicloud.com",
+            "bucket_key_enabled": "",
+            "bucket_version": "3.0",
+            "cors_rule": [],
+            "edge_location": null,
+            "encryption": false,
+            "enterprise_project_id": "0",
+            "force_destroy": true,
+            "id": "data-integration-click-logs-parquet",
+            "ies_location": null,
+            "kms_data_encryption": "",
+            "kms_key_id": "",
+            "kms_key_project_id": "",
+            "lifecycle_rule": [
+              {
+                "abort_incomplete_multipart_upload": [],
+                "enabled": true,
+                "expiration": [
+                  {
+                    "days": 30
+                  }
+                ],
+                "name": "expire-parquet",
+                "noncurrent_version_expiration": [],
+                "noncurrent_version_transition": [],
+                "prefix": "clicklog/",
+                "transition": []
+              }
+            ],
+            "logging": [],
+            "multi_az": false,
+            "parallel_fs": false,
+            "policy": "",
+            "policy_format": "obs",
+            "quota": 0,
+            "region": "cn-north-4",
+            "sse_algorithm": "",
+            "storage_class": "STANDARD",
+            "storage_info": [
+              {
+                "object_number": 3,
+                "size": 216569352
+              }
+            ],
+            "tags": {},
+            "user_domain_names": [],
+            "versioning": true,
+            "website": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_obs_bucket_object",
+      "name": "click_logger_jar",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acl": null,
+            "bucket": "data-integration-click-logs-parquet",
+            "content": null,
+            "content_type": "application/java-archive",
+            "encryption": null,
+            "etag": "9354b6ad6133fdf63c7c1fc4907a0ed2",
+            "id": "function-code/click-logger.jar",
+            "key": "function-code/click-logger.jar",
+            "kms_key_id": null,
+            "metadata": null,
+            "region": "cn-north-4",
+            "size": 72191215,
+            "source": "../src/clicklogger/target/clicklogger-1.0-SNAPSHOT.jar",
+            "storage_class": "STANDARD",
+            "tags": {},
+            "version_id": "G00111A0AF22B8C2FFFF81851032E952"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "huaweicloud_obs_bucket.click_log_parquet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_vpc",
+      "name": "data_integration_click_logs_vpc",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_service_endpoint_states": null,
+            "cidr": "10.0.0.0/16",
+            "description": "",
+            "enhanced_local_route": "false",
+            "enterprise_project_id": "0",
+            "id": "96df06cd-5609-4eca-91ed-9ae85aa5b2ce",
+            "name": "data-integration-click-logs-vpc",
+            "region": "cn-north-4",
+            "routes": [],
+            "secondary_cidr": null,
+            "secondary_cidrs": [],
+            "status": "OK",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "huaweicloud_vpc_subnet",
+      "name": "data_integration_click_logs_subnet",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "availability_zone": "cn-north-4a",
+            "cidr": "10.0.1.0/24",
+            "description": "",
+            "dhcp_domain_name": null,
+            "dhcp_enable": true,
+            "dhcp_ipv6_lease_time": null,
+            "dhcp_lease_time": "87600h",
+            "dns_list": [
+              "100.125.1.250",
+              "100.125.129.250"
+            ],
+            "gateway_ip": "10.0.1.1",
+            "id": "edc831d8-3ada-442c-8c9c-a56408668126",
+            "ipv4_subnet_id": "15b23a0d-fb73-4a12-b07c-d04e1731ee48",
+            "ipv6_cidr": "",
+            "ipv6_enable": false,
+            "ipv6_gateway": "",
+            "ipv6_subnet_id": "",
+            "name": "data-integration-click-logs-subnet",
+            "ntp_server_address": null,
+            "primary_dns": "100.125.1.250",
+            "region": "cn-north-4",
+            "secondary_dns": "100.125.129.250",
+            "subnet_id": "15b23a0d-fb73-4a12-b07c-d04e1731ee48",
+            "tags": {},
+            "timeouts": null,
+            "vpc_id": "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "huaweicloud_vpc.data_integration_click_logs_vpc"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

@@ -1,0 +1,49 @@
+﻿=== terraform init ===
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Finding latest version of huaweicloud/huaweicloud...
+[33m鈺?[0m[0m
+[33m鈹?[0m [0m[1m[33mWarning: [0m[0m[1mProvider development overrides are in effect[0m
+[33m鈹?[0m [0m
+[33m鈹?[0m [0m[0mThe following provider development overrides are set in the CLI
+[33m鈹?[0m [0mconfiguration:
+[33m鈹?[0m [0m - huaweicloud/huaweicloud in C:\Users\dgcd\.workbuddy\tf-providers\huaweicloud
+[33m鈹?[0m [0m
+[33m鈹?[0m [0mThese providers are not installed as part of init since they were
+[33m鈹?[0m [0moverwritten. If this is unintentional please re-run without the development
+[33m鈹?[0m [0moverrides set.
+[33m鈺?[0m[0m
+terraform.exe : [31m鈺?[0m[0m
+所在位置 行:454 字符: 11
++ $out.Add((& $tf init -input=false 2>&1 | Out-String))
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([31m鈺?[0m[0m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[31m鈹?[0m [0m[1m[31mError: [0m[0m[1mFailed to query available provider packages[0m
+[31m鈹?[0m [0m
+[31m鈹?[0m [0m[0mCould not retrieve the list of available versions for provider
+[31m鈹?[0m [0mhuaweicloud/huaweicloud: no available releases match the given constraints 
+[31m鈹?[0m [0m
+[31m鈹?[0m [0mTo see which modules are currently depending on huaweicloud/huaweicloud and
+[31m鈹?[0m [0mwhat versions are specified, run the following command:
+[31m鈹?[0m [0m    terraform providers
+[31m鈺?[0m[0m
+
+=== terraform import apig_instance ===
+[0m[1mdata.huaweicloud_identity_projects.current: Reading...[0m[0m
+[0m[1mdata.huaweicloud_dms_kafka_flavors.click_log: Reading...[0m[0m
+[0m[1mhuaweicloud_apig_instance.click_log_api: Importing from ID "9ffec2f3ed344cf48ea5816fe3a80093"...[0m
+[0m[1m[32mhuaweicloud_apig_instance.click_log_api: Import prepared![0m
+[0m[32m  Prepared huaweicloud_apig_instance for import[0m
+[0m[1mhuaweicloud_apig_instance.click_log_api: Refreshing state... [id=9ffec2f3ed344cf48ea5816fe3a80093][0m
+[0m[1mdata.huaweicloud_identity_projects.current: Read complete after 0s [id=2158093176][0m
+[0m[1mdata.huaweicloud_dms_kafka_flavors.click_log: Read complete after 0s [id=3791759139][0m
+[0m[32m
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+[0m
+
