@@ -1,0 +1,521 @@
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mProvider development overrides are in effect[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe following provider development overrides are set in the CLI
+[33m│[0m [0mconfiguration:
+[33m│[0m [0m - huaweicloud/huaweicloud in C:\Users\dgcd\.workbuddy\tf-providers\huaweicloud
+[33m│[0m [0m
+[33m│[0m [0mThe behavior may therefore not match any released version of the provider
+[33m│[0m [0mand applying changes may cause the state to become incompatible with
+[33m│[0m [0mpublished releases.
+[33m╵[0m[0m
+[0m[1mdata.huaweicloud_dms_kafka_flavors.click_log: Reading...[0m[0m
+[0m[1mdata.huaweicloud_identity_projects.current: Reading...[0m[0m
+[0m[1mhuaweicloud_identity_agency.functiongraph_click_logs: Refreshing state... [id=01a0ad5e42827ceea403c44e88ecdabc][0m
+[0m[1mhuaweicloud_vpc.data_integration_click_logs_vpc: Refreshing state... [id=96df06cd-5609-4eca-91ed-9ae85aa5b2ce][0m
+[0m[1mhuaweicloud_obs_bucket.click_log_parquet: Refreshing state... [id=data-integration-click-logs-parquet][0m
+[0m[1mhuaweicloud_lts_group.click_log_lts: Refreshing state... [id=ca184672-735f-49cc-bfe7-f0216181ae12][0m
+[0m[1mhuaweicloud_networking_secgroup.data_integration_click_logs_sg: Refreshing state... [id=865201c6-f845-4bfe-88aa-2a2e4bee3366][0m
+[0m[1mdata.huaweicloud_identity_projects.current: Read complete after 0s [id=2158093176][0m
+[0m[1mdata.huaweicloud_dms_kafka_flavors.click_log: Read complete after 0s [id=3791759139][0m
+[0m[1mhuaweicloud_lts_stream.authorizer: Refreshing state... [id=40ff30cc-8b56-42c1-9fd5-a2e46fad70d5][0m
+[0m[1mhuaweicloud_lts_stream.consumer: Refreshing state... [id=4539420b-8eb6-4ed9-a989-ed37dbcd4322][0m
+[0m[1mhuaweicloud_lts_stream.business: Refreshing state... [id=c1eabc83-a0f7-4e29-a1cd-c7f8660141b9][0m
+[0m[1mhuaweicloud_networking_secgroup_rule.allow_internal: Refreshing state... [id=53236e10-bf16-4b7d-aecd-aa43a442e134][0m
+[0m[1mhuaweicloud_networking_secgroup_rule.allow_egress_udp: Refreshing state... [id=1379c323-d953-47cc-95c0-d9086865dbde][0m
+[0m[1mhuaweicloud_networking_secgroup_rule.allow_egress_tcp: Refreshing state... [id=d1c785c1-0a3c-40f9-a77e-5c7e0197147a][0m
+[0m[1mhuaweicloud_vpc_subnet.data_integration_click_logs_subnet: Refreshing state... [id=edc831d8-3ada-442c-8c9c-a56408668126][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+  [33m~[0m update in-place[0m
+
+Terraform will perform the following actions:
+
+[1m  # huaweicloud_apig_api.click_log_api[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_apig_api" "click_log_api" {
+      [32m+[0m[0m authorizer_id           = (known after apply)
+      [32m+[0m[0m content_type            = (known after apply)
+      [32m+[0m[0m cors                    = false
+      [32m+[0m[0m group_id                = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m instance_id             = (known after apply)
+      [32m+[0m[0m is_send_fg_body_base64  = true
+      [32m+[0m[0m matching                = "Exact"
+      [32m+[0m[0m name                    = "click-logger"
+      [32m+[0m[0m region                  = (known after apply)
+      [32m+[0m[0m registered_at           = (known after apply)
+      [32m+[0m[0m request_method          = "POST"
+      [32m+[0m[0m request_path            = "/clicklogger"
+      [32m+[0m[0m request_protocol        = "HTTPS"
+      [32m+[0m[0m security_authentication = "AUTHORIZER"
+      [32m+[0m[0m simple_authentication   = false
+      [32m+[0m[0m tags                    = [
+          [32m+[0m[0m "data-integration-click-logs",
+        ]
+      [32m+[0m[0m type                    = "Public"
+      [32m+[0m[0m updated_at              = (known after apply)
+
+      [32m+[0m[0m func_graph {
+          [32m+[0m[0m function_urn    = (known after apply)
+          [32m+[0m[0m invocation_type = "sync"
+          [32m+[0m[0m timeout         = 5000
+        }
+
+      [32m+[0m[0m mock (known after apply)
+
+      [32m+[0m[0m request_params (known after apply)
+
+      [32m+[0m[0m web (known after apply)
+    }
+
+[1m  # huaweicloud_apig_custom_authorizer.click_log_authorizer[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_apig_custom_authorizer" "click_log_authorizer" {
+      [32m+[0m[0m cache_age          = 0
+      [32m+[0m[0m created_at         = (known after apply)
+      [32m+[0m[0m function_alias_uri = (known after apply)
+      [32m+[0m[0m function_urn       = (known after apply)
+      [32m+[0m[0m function_version   = (known after apply)
+      [32m+[0m[0m id                 = (known after apply)
+      [32m+[0m[0m instance_id        = (known after apply)
+      [32m+[0m[0m name               = "data-integration-click-logs-front-auth"
+      [32m+[0m[0m network_type       = (known after apply)
+      [32m+[0m[0m region             = (known after apply)
+      [32m+[0m[0m type               = "FRONTEND"
+
+      [32m+[0m[0m identity {
+          [32m+[0m[0m location   = "HEADER"
+          [32m+[0m[0m name       = "Authorization"
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # huaweicloud_apig_group.click_log_group[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_apig_group" "click_log_group" {
+      [32m+[0m[0m created_at            = (known after apply)
+      [32m+[0m[0m domain_access_enabled = (known after apply)
+      [32m+[0m[0m force_destroy         = (known after apply)
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m instance_id           = (known after apply)
+      [32m+[0m[0m name                  = "data-integration-click-logs-group"
+      [32m+[0m[0m region                = (known after apply)
+      [32m+[0m[0m registration_time     = (known after apply)
+      [32m+[0m[0m update_time           = (known after apply)
+      [32m+[0m[0m updated_at            = (known after apply)
+
+      [32m+[0m[0m environment (known after apply)
+
+      [32m+[0m[0m url_domains (known after apply)
+    }
+
+[1m  # huaweicloud_apig_instance.click_log_api[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_apig_instance" "click_log_api" {
+      [32m+[0m[0m availability_zones    = (known after apply)
+      [32m+[0m[0m create_time           = (known after apply)
+      [32m+[0m[0m created_at            = (known after apply)
+      [32m+[0m[0m edition               = "BASIC"
+      [32m+[0m[0m egress_address        = (known after apply)
+      [32m+[0m[0m eip_id                = (known after apply)
+      [32m+[0m[0m elb_ids               = (known after apply)
+      [32m+[0m[0m enterprise_project_id = (known after apply)
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m ingress_address       = (known after apply)
+      [32m+[0m[0m ipv6_enable           = (known after apply)
+      [32m+[0m[0m loadbalancer_provider = (known after apply)
+      [32m+[0m[0m maintain_begin        = "02:00:00"
+      [32m+[0m[0m maintain_end          = (known after apply)
+      [32m+[0m[0m name                  = "data-integration-click-logs-apig"
+      [32m+[0m[0m region                = (known after apply)
+      [32m+[0m[0m security_group_id     = "865201c6-f845-4bfe-88aa-2a2e4bee3366"
+      [32m+[0m[0m status                = (known after apply)
+      [32m+[0m[0m subnet_id             = "edc831d8-3ada-442c-8c9c-a56408668126"
+      [32m+[0m[0m supported_features    = (known after apply)
+      [32m+[0m[0m tags                  = (known after apply)
+      [32m+[0m[0m vpc_id                = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+      [32m+[0m[0m vpc_ingress_address   = (known after apply)
+      [32m+[0m[0m vpcep_service_address = (known after apply)
+      [32m+[0m[0m vpcep_service_name    = (known after apply)
+    }
+
+[1m  # huaweicloud_dms_kafka_instance.click_log[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_dms_kafka_instance" "click_log" {
+      [32m+[0m[0m availability_zones         = [
+          [32m+[0m[0m "cn-north-4a",
+        ]
+      [32m+[0m[0m available_zones            = (known after apply)
+      [32m+[0m[0m bandwidth                  = (known after apply)
+      [32m+[0m[0m broker_num                 = 1
+      [32m+[0m[0m cert_replaced              = (known after apply)
+      [32m+[0m[0m charging_mode              = "postPaid"
+      [32m+[0m[0m cluster                    = (known after apply)
+      [32m+[0m[0m connect_address            = (known after apply)
+      [32m+[0m[0m connector_id               = (known after apply)
+      [32m+[0m[0m connector_node_num         = (known after apply)
+      [32m+[0m[0m created_at                 = (known after apply)
+      [32m+[0m[0m dumping                    = (known after apply)
+      [32m+[0m[0m enable_auto_topic          = (known after apply)
+      [32m+[0m[0m enable_public_ip           = (known after apply)
+      [32m+[0m[0m engine                     = (known after apply)
+      [32m+[0m[0m engine_version             = "2.3.0"
+      [32m+[0m[0m enterprise_project_id      = (known after apply)
+      [32m+[0m[0m extend_times               = (known after apply)
+      [32m+[0m[0m flavor_id                  = "c6.2u4g.cluster"
+      [32m+[0m[0m id                         = (known after apply)
+      [32m+[0m[0m ipv6_connect_addresses     = (known after apply)
+      [32m+[0m[0m ipv6_enable                = (known after apply)
+      [32m+[0m[0m is_logical_volume          = (known after apply)
+      [32m+[0m[0m maintain_begin             = (known after apply)
+      [32m+[0m[0m maintain_end               = (known after apply)
+      [32m+[0m[0m management_connect_address = (known after apply)
+      [32m+[0m[0m manager_user               = (known after apply)
+      [32m+[0m[0m manegement_connect_address = (known after apply)
+      [32m+[0m[0m message_query_inst_enable  = (known after apply)
+      [32m+[0m[0m name                       = "data-integration-click-logs-kafka"
+      [32m+[0m[0m network_id                 = "edc831d8-3ada-442c-8c9c-a56408668126"
+      [32m+[0m[0m node_num                   = (known after apply)
+      [32m+[0m[0m partition_num              = (known after apply)
+      [32m+[0m[0m pod_connect_address        = (known after apply)
+      [32m+[0m[0m port                       = (known after apply)
+      [32m+[0m[0m port_protocols             = (known after apply)
+      [32m+[0m[0m public_bandwidth           = (known after apply)
+      [32m+[0m[0m public_ip_address          = (known after apply)
+      [32m+[0m[0m region                     = (known after apply)
+      [32m+[0m[0m resource_spec_code         = (known after apply)
+      [32m+[0m[0m retention_policy           = (known after apply)
+      [32m+[0m[0m security_group_id          = "865201c6-f845-4bfe-88aa-2a2e4bee3366"
+      [32m+[0m[0m ssl_enable                 = false
+      [32m+[0m[0m ssl_two_way_enable         = (known after apply)
+      [32m+[0m[0m status                     = (known after apply)
+      [32m+[0m[0m storage_resource_id        = (known after apply)
+      [32m+[0m[0m storage_space              = 600
+      [32m+[0m[0m storage_spec_code          = "dms.physical.storage.ultra.v2"
+      [32m+[0m[0m storage_type               = (known after apply)
+      [32m+[0m[0m tags                       = {
+          [32m+[0m[0m "project" = "data-integration-click-logs"
+        }
+      [32m+[0m[0m type                       = (known after apply)
+      [32m+[0m[0m used_storage_space         = (known after apply)
+      [32m+[0m[0m user_id                    = (known after apply)
+      [32m+[0m[0m user_name                  = (known after apply)
+      [32m+[0m[0m vpc_client_plain           = true
+      [32m+[0m[0m vpc_id                     = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+
+      [32m+[0m[0m cross_vpc_accesses (known after apply)
+
+      [32m+[0m[0m parameters (known after apply)
+
+      [32m+[0m[0m port_protocol (known after apply)
+    }
+
+[1m  # huaweicloud_dms_kafka_topic.click_log[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_dms_kafka_topic" "click_log" {
+      [32m+[0m[0m aging_time       = (known after apply)
+      [32m+[0m[0m created_at       = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m instance_id      = (known after apply)
+      [32m+[0m[0m name             = "data-integration-click-logs-topic"
+      [32m+[0m[0m partitions       = 1
+      [32m+[0m[0m policies_only    = (known after apply)
+      [32m+[0m[0m region           = (known after apply)
+      [32m+[0m[0m replicas         = (known after apply)
+      [32m+[0m[0m sync_flushing    = (known after apply)
+      [32m+[0m[0m sync_replication = (known after apply)
+      [32m+[0m[0m type             = (known after apply)
+
+      [32m+[0m[0m configs (known after apply)
+    }
+
+[1m  # huaweicloud_fgs_function.click_logger[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_fgs_function" "click_logger" {
+      [32m+[0m[0m agency                 = "data-integration-click-logs-fgs-agency"
+      [32m+[0m[0m app                    = "default"
+      [32m+[0m[0m app_agency             = (known after apply)
+      [32m+[0m[0m code_filename          = "click-logger.jar"
+      [32m+[0m[0m code_type              = "obs"
+      [32m+[0m[0m code_url               = "https://data-integration-click-logs-parquet.obs.cn-north-4.myhuaweicloud.com/function-code/click-logger.jar"
+      [32m+[0m[0m concurrency_num        = (known after apply)
+      [32m+[0m[0m depend_list            = (known after apply)
+      [32m+[0m[0m dns_list               = (known after apply)
+      [32m+[0m[0m enable_auth_in_header  = (known after apply)
+      [32m+[0m[0m enable_class_isolation = (known after apply)
+      [32m+[0m[0m enable_dynamic_memory  = (known after apply)
+      [32m+[0m[0m enable_lts_log         = (known after apply)
+      [32m+[0m[0m enterprise_project_id  = (known after apply)
+      [32m+[0m[0m ephemeral_storage      = (known after apply)
+      [32m+[0m[0m functiongraph_version  = (known after apply)
+      [32m+[0m[0m handler                = "com.clicklogs.Handlers.ClickLoggerHandler::handleRequest"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m initializer_handler    = (known after apply)
+      [32m+[0m[0m initializer_timeout    = (known after apply)
+      [32m+[0m[0m is_stateful_function   = (known after apply)
+      [32m+[0m[0m log_group_id           = "ca184672-735f-49cc-bfe7-f0216181ae12"
+      [32m+[0m[0m log_group_name         = (known after apply)
+      [32m+[0m[0m log_stream_id          = "c1eabc83-a0f7-4e29-a1cd-c7f8660141b9"
+      [32m+[0m[0m log_stream_name        = (known after apply)
+      [32m+[0m[0m lts_custom_tag         = (known after apply)
+      [32m+[0m[0m lts_custom_tag_origin  = (known after apply)
+      [32m+[0m[0m max_instance_num       = (known after apply)
+      [32m+[0m[0m memory_size            = 2048
+      [32m+[0m[0m mount_user_group_id    = (known after apply)
+      [32m+[0m[0m mount_user_id          = (known after apply)
+      [32m+[0m[0m name                   = "data-integration-click-logs-click-logger"
+      [32m+[0m[0m network_id             = "edc831d8-3ada-442c-8c9c-a56408668126"
+      [32m+[0m[0m region                 = (known after apply)
+      [32m+[0m[0m runtime                = "Java8"
+      [32m+[0m[0m tags                   = (known after apply)
+      [32m+[0m[0m timeout                = 300
+      [32m+[0m[0m urn                    = (known after apply)
+      [32m+[0m[0m user_data              = (known after apply)
+      [32m+[0m[0m version                = (known after apply)
+      [32m+[0m[0m vpc_id                 = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+
+      [32m+[0m[0m custom_image (known after apply)
+
+      [32m+[0m[0m func_mounts (known after apply)
+    }
+
+[1m  # huaweicloud_fgs_function.click_logger_authorizer[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_fgs_function" "click_logger_authorizer" {
+      [32m+[0m[0m agency                 = "data-integration-click-logs-fgs-agency"
+      [32m+[0m[0m app                    = "default"
+      [32m+[0m[0m app_agency             = (known after apply)
+      [32m+[0m[0m code_filename          = "click-logger.jar"
+      [32m+[0m[0m code_type              = "obs"
+      [32m+[0m[0m code_url               = "https://data-integration-click-logs-parquet.obs.cn-north-4.myhuaweicloud.com/function-code/click-logger.jar"
+      [32m+[0m[0m concurrency_num        = (known after apply)
+      [32m+[0m[0m depend_list            = (known after apply)
+      [32m+[0m[0m dns_list               = (known after apply)
+      [32m+[0m[0m enable_auth_in_header  = (known after apply)
+      [32m+[0m[0m enable_class_isolation = (known after apply)
+      [32m+[0m[0m enable_dynamic_memory  = (known after apply)
+      [32m+[0m[0m enable_lts_log         = (known after apply)
+      [32m+[0m[0m enterprise_project_id  = (known after apply)
+      [32m+[0m[0m ephemeral_storage      = (known after apply)
+      [32m+[0m[0m functiongraph_version  = (known after apply)
+      [32m+[0m[0m handler                = "com.clicklogs.Handlers.APIGatewayAuthorizerHandler::handleRequest"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m initializer_handler    = (known after apply)
+      [32m+[0m[0m initializer_timeout    = (known after apply)
+      [32m+[0m[0m is_stateful_function   = (known after apply)
+      [32m+[0m[0m log_group_id           = "ca184672-735f-49cc-bfe7-f0216181ae12"
+      [32m+[0m[0m log_group_name         = (known after apply)
+      [32m+[0m[0m log_stream_id          = "40ff30cc-8b56-42c1-9fd5-a2e46fad70d5"
+      [32m+[0m[0m log_stream_name        = (known after apply)
+      [32m+[0m[0m lts_custom_tag         = (known after apply)
+      [32m+[0m[0m lts_custom_tag_origin  = (known after apply)
+      [32m+[0m[0m max_instance_num       = (known after apply)
+      [32m+[0m[0m memory_size            = 512
+      [32m+[0m[0m mount_user_group_id    = (known after apply)
+      [32m+[0m[0m mount_user_id          = (known after apply)
+      [32m+[0m[0m name                   = "data-integration-click-logs-click-logger-authorizer"
+      [32m+[0m[0m region                 = (known after apply)
+      [32m+[0m[0m runtime                = "Java8"
+      [32m+[0m[0m tags                   = (known after apply)
+      [32m+[0m[0m timeout                = 10
+      [32m+[0m[0m urn                    = (known after apply)
+      [32m+[0m[0m user_data              = jsonencode(
+            {
+              [32m+[0m[0m AUTH_TOKENS = "ALLOW=ORDERAPP;ALLOW=BILLAPP;"
+            }
+        )
+      [32m+[0m[0m version                = (known after apply)
+
+      [32m+[0m[0m custom_image (known after apply)
+
+      [32m+[0m[0m func_mounts (known after apply)
+    }
+
+[1m  # huaweicloud_fgs_function.click_logger_stream[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_fgs_function" "click_logger_stream" {
+      [32m+[0m[0m agency                 = "data-integration-click-logs-fgs-agency"
+      [32m+[0m[0m app                    = "default"
+      [32m+[0m[0m app_agency             = (known after apply)
+      [32m+[0m[0m code_filename          = "click-logger.jar"
+      [32m+[0m[0m code_type              = "obs"
+      [32m+[0m[0m code_url               = "https://data-integration-click-logs-parquet.obs.cn-north-4.myhuaweicloud.com/function-code/click-logger.jar"
+      [32m+[0m[0m concurrency_num        = (known after apply)
+      [32m+[0m[0m depend_list            = (known after apply)
+      [32m+[0m[0m dns_list               = (known after apply)
+      [32m+[0m[0m enable_auth_in_header  = (known after apply)
+      [32m+[0m[0m enable_class_isolation = (known after apply)
+      [32m+[0m[0m enable_dynamic_memory  = (known after apply)
+      [32m+[0m[0m enable_lts_log         = (known after apply)
+      [32m+[0m[0m enterprise_project_id  = (known after apply)
+      [32m+[0m[0m ephemeral_storage      = (known after apply)
+      [32m+[0m[0m functiongraph_version  = (known after apply)
+      [32m+[0m[0m handler                = "com.clicklogs.Handlers.ClickLoggerStreamHandler::handleRequest"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m initializer_handler    = (known after apply)
+      [32m+[0m[0m initializer_timeout    = (known after apply)
+      [32m+[0m[0m is_stateful_function   = (known after apply)
+      [32m+[0m[0m log_group_id           = "ca184672-735f-49cc-bfe7-f0216181ae12"
+      [32m+[0m[0m log_group_name         = (known after apply)
+      [32m+[0m[0m log_stream_id          = "4539420b-8eb6-4ed9-a989-ed37dbcd4322"
+      [32m+[0m[0m log_stream_name        = (known after apply)
+      [32m+[0m[0m lts_custom_tag         = (known after apply)
+      [32m+[0m[0m lts_custom_tag_origin  = (known after apply)
+      [32m+[0m[0m max_instance_num       = (known after apply)
+      [32m+[0m[0m memory_size            = 2048
+      [32m+[0m[0m mount_user_group_id    = (known after apply)
+      [32m+[0m[0m mount_user_id          = (known after apply)
+      [32m+[0m[0m name                   = "data-integration-click-logs-click-logger-stream"
+      [32m+[0m[0m network_id             = "edc831d8-3ada-442c-8c9c-a56408668126"
+      [32m+[0m[0m region                 = (known after apply)
+      [32m+[0m[0m runtime                = "Java8"
+      [32m+[0m[0m tags                   = (known after apply)
+      [32m+[0m[0m timeout                = 300
+      [32m+[0m[0m urn                    = (known after apply)
+      [32m+[0m[0m user_data              = jsonencode(
+            {
+              [32m+[0m[0m GEMINIDB_ENDPOINT = ""
+              [32m+[0m[0m GEMINIDB_TABLE    = "click_log_table"
+              [32m+[0m[0m GEMINIDB_USER     = "rwuser"
+              [32m+[0m[0m OBS_BUCKET        = "data-integration-click-logs-parquet"
+              [32m+[0m[0m OBS_ENDPOINT      = "obs.cn-north-4.myhuaweicloud.com"
+              [32m+[0m[0m PROJECT_ID        = ""
+              [32m+[0m[0m REGION            = "cn-north-4"
+            }
+        )
+      [32m+[0m[0m version                = (known after apply)
+      [32m+[0m[0m vpc_id                 = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+
+      [32m+[0m[0m custom_image (known after apply)
+
+      [32m+[0m[0m func_mounts (known after apply)
+    }
+
+[1m  # huaweicloud_fgs_function_trigger.kafka_to_click_logger_stream[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_fgs_function_trigger" "kafka_to_click_logger_stream" {
+      [32m+[0m[0m created_at   = (known after apply)
+      [32m+[0m[0m event_data   = (known after apply)
+      [32m+[0m[0m function_urn = (known after apply)
+      [32m+[0m[0m id           = (known after apply)
+      [32m+[0m[0m region       = (known after apply)
+      [32m+[0m[0m status       = (known after apply)
+      [32m+[0m[0m type         = "KAFKA"
+      [32m+[0m[0m updated_at   = (known after apply)
+    }
+
+[1m  # huaweicloud_geminidb_instance.click_log_db[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_geminidb_instance" "click_log_db" {
+      [32m+[0m[0m actions                         = (known after apply)
+      [32m+[0m[0m availability_zone               = "cn-north-4a,cn-north-4b,cn-north-4c"
+      [32m+[0m[0m charging_mode                   = "postPaid"
+      [32m+[0m[0m config_ips                      = (known after apply)
+      [32m+[0m[0m configuration_id                = (known after apply)
+      [32m+[0m[0m cpu_threshold                   = (known after apply)
+      [32m+[0m[0m created                         = (known after apply)
+      [32m+[0m[0m db_user_name                    = (known after apply)
+      [32m+[0m[0m dedicated_resource_id           = (known after apply)
+      [32m+[0m[0m dual_active_info                = (known after apply)
+      [32m+[0m[0m enterprise_project_id           = (known after apply)
+      [32m+[0m[0m groups                          = (known after apply)
+      [32m+[0m[0m id                              = (known after apply)
+      [32m+[0m[0m lb_ip_address                   = (known after apply)
+      [32m+[0m[0m lb_port                         = (known after apply)
+      [32m+[0m[0m maintenance_end_time            = (known after apply)
+      [32m+[0m[0m maintenance_start_time          = (known after apply)
+      [32m+[0m[0m mem_threshold                   = (known after apply)
+      [32m+[0m[0m mode                            = "Cluster"
+      [32m+[0m[0m name                            = "data-integration-click-logs-db"
+      [32m+[0m[0m node_limit                      = (known after apply)
+      [32m+[0m[0m node_switch_option              = (known after apply)
+      [32m+[0m[0m overload_node_threshold         = (known after apply)
+      [32m+[0m[0m password                        = (sensitive value)
+      [32m+[0m[0m port                            = (known after apply)
+      [32m+[0m[0m product_type                    = (known after apply)
+      [32m+[0m[0m region                          = (known after apply)
+      [32m+[0m[0m second_level_monitoring_enabled = (known after apply)
+      [32m+[0m[0m security_group_id               = "865201c6-f845-4bfe-88aa-2a2e4bee3366"
+      [32m+[0m[0m status                          = (known after apply)
+      [32m+[0m[0m step                            = (known after apply)
+      [32m+[0m[0m subnet_id                       = "edc831d8-3ada-442c-8c9c-a56408668126"
+      [32m+[0m[0m switch_option                   = (known after apply)
+      [32m+[0m[0m tags                            = (known after apply)
+      [32m+[0m[0m time_zone                       = (known after apply)
+      [32m+[0m[0m updated                         = (known after apply)
+      [32m+[0m[0m vpc_id                          = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+
+      [32m+[0m[0m access_control (known after apply)
+
+      [32m+[0m[0m backup_strategy {
+          [32m+[0m[0m keep_days  = 7
+          [32m+[0m[0m start_time = "02:00-03:00"
+        }
+
+      [32m+[0m[0m datastore {
+          [32m+[0m[0m patch_available = (known after apply)
+          [32m+[0m[0m storage_engine  = "rocksDB"
+          [32m+[0m[0m type            = "dynamodb"
+          [32m+[0m[0m whole_version   = (known after apply)
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [32m+[0m[0m flavor {
+          [32m+[0m[0m num       = 3
+          [32m+[0m[0m size      = 100
+          [32m+[0m[0m spec_code = "geminidb.dynamodb.xlarge.4"
+          [32m+[0m[0m storage   = "ULTRAHIGH"
+        }
+
+      [32m+[0m[0m parameters (known after apply)
+
+      [32m+[0m[0m policy (known after apply)
+    }
+
+[1m  # huaweicloud_identity_agency.functiongraph_click_logs[0m will be updated in-place
+[0m  [33m~[0m[0m resource "huaweicloud_identity_agency" "functiongraph_click_logs" {
+        id                           = "01a0ad5e42827ceea403c44e88ecdabc"
+        name                         = "data-integration-click-logs-fgs-agency"
+        [90m# (7 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m project_role {
+          [31m-[0m[0m project = "cn-north-4" [90m-> null[0m[0m
+          [31m-[0m[0m roles   = [
+              [31m-[0m[0m "DIS Administrator",
+              [31m-[0m[0m "GeminiDB FullAccess",
+              [31m-[0m[0m "OBS OperateAccess",
+            ] [90m-> null[0m[0m
+        }
+      [32m+[0m[0m project_role {
+          [32m+[0m[0m project = "cn-north-4"
+          [32m+[0m[0m roles   = [
+              [32m+[0m[0m "GeminiDB FullAccess",
+              [32m+[0m[0m "OBS OperateAccess",
+            ]
+        }
+    }
+
+[1m  # huaweicloud_obs_bucket_object.click_logger_jar[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_obs_bucket_object" "click_logger_jar" {
+      [32m+[0m[0m bucket        = "data-integration-click-logs-parquet"
+      [32m+[0m[0m content_type  = (known after apply)
+      [32m+[0m[0m etag          = (known after apply)
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m key           = "function-code/click-logger.jar"
+      [32m+[0m[0m region        = (known after apply)
+      [32m+[0m[0m size          = (known after apply)
+      [32m+[0m[0m source        = "../src/clicklogger/target/clicklogger-1.0-SNAPSHOT.jar"
+      [32m+[0m[0m storage_class = (known after apply)
+      [32m+[0m[0m tags          = (known after apply)
+      [32m+[0m[0m version_id    = (known after apply)
+    }
+
+[1mPlan:[0m [0m12 to add, 1 to change, 0 to destroy.
+
+Changes to Outputs:
+  [32m+[0m[0m apig_api_url                              = (known after apply)
+  [31m-[0m[0m dis_stream_name                           = "data-integration-click-logs-dis-stream" [90m-> null[0m[0m
+  [32m+[0m[0m functiongraph_click_logger_authorizer_urn = (known after apply)
+  [32m+[0m[0m functiongraph_click_logger_stream_urn     = (known after apply)
+  [32m+[0m[0m functiongraph_click_logger_urn            = (known after apply)
+  [32m+[0m[0m geminidb_endpoint                         = (sensitive value)
+  [32m+[0m[0m geminidb_instance_id                      = (known after apply)
+  [32m+[0m[0m kafka_bootstrap_address                   = (known after apply)
+  [32m+[0m[0m kafka_topic_name                          = "data-integration-click-logs-topic"
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

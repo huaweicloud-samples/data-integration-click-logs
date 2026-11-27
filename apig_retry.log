@@ -1,0 +1,109 @@
+﻿[33m鈺?[0m[0m
+[33m鈹?[0m [0m[1m[33mWarning: [0m[0m[1mProvider development overrides are in effect[0m
+[33m鈹?[0m [0m
+[33m鈹?[0m [0m[0mThe following provider development overrides are set in the CLI
+[33m鈹?[0m [0mconfiguration:
+[33m鈹?[0m [0m - huaweicloud/huaweicloud in C:\Users\dgcd\.workbuddy\tf-providers\huaweicloud
+[33m鈹?[0m [0m
+[33m鈹?[0m [0mThe behavior may therefore not match any released version of the provider
+[33m鈹?[0m [0mand applying changes may cause the state to become incompatible with
+[33m鈹?[0m [0mpublished releases.
+[33m鈺?[0m[0m
+[0m[1mhuaweicloud_vpc.data_integration_click_logs_vpc: Refreshing state... [id=96df06cd-5609-4eca-91ed-9ae85aa5b2ce][0m
+[0m[1mhuaweicloud_networking_secgroup.data_integration_click_logs_sg: Refreshing state... [id=865201c6-f845-4bfe-88aa-2a2e4bee3366][0m
+[0m[1mhuaweicloud_vpc_subnet.data_integration_click_logs_subnet: Refreshing state... [id=edc831d8-3ada-442c-8c9c-a56408668126][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # huaweicloud_apig_group.click_log_group[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_apig_group" "click_log_group" {
+      [32m+[0m[0m created_at            = (known after apply)
+      [32m+[0m[0m domain_access_enabled = (known after apply)
+      [32m+[0m[0m force_destroy         = (known after apply)
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m instance_id           = (known after apply)
+      [32m+[0m[0m name                  = "data-integration-click-logs-group"
+      [32m+[0m[0m region                = (known after apply)
+      [32m+[0m[0m registration_time     = (known after apply)
+      [32m+[0m[0m update_time           = (known after apply)
+      [32m+[0m[0m updated_at            = (known after apply)
+
+      [32m+[0m[0m environment (known after apply)
+
+      [32m+[0m[0m url_domains (known after apply)
+    }
+
+[1m  # huaweicloud_apig_instance.click_log_api[0m will be created
+[0m  [32m+[0m[0m resource "huaweicloud_apig_instance" "click_log_api" {
+      [32m+[0m[0m availability_zones    = (known after apply)
+      [32m+[0m[0m create_time           = (known after apply)
+      [32m+[0m[0m created_at            = (known after apply)
+      [32m+[0m[0m edition               = "BASIC"
+      [32m+[0m[0m egress_address        = (known after apply)
+      [32m+[0m[0m eip_id                = (known after apply)
+      [32m+[0m[0m elb_ids               = (known after apply)
+      [32m+[0m[0m enterprise_project_id = (known after apply)
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m ingress_address       = (known after apply)
+      [32m+[0m[0m ipv6_enable           = (known after apply)
+      [32m+[0m[0m loadbalancer_provider = (known after apply)
+      [32m+[0m[0m maintain_begin        = "02:00:00"
+      [32m+[0m[0m maintain_end          = (known after apply)
+      [32m+[0m[0m name                  = "data-integration-click-logs-apig"
+      [32m+[0m[0m region                = (known after apply)
+      [32m+[0m[0m security_group_id     = "865201c6-f845-4bfe-88aa-2a2e4bee3366"
+      [32m+[0m[0m status                = (known after apply)
+      [32m+[0m[0m subnet_id             = "edc831d8-3ada-442c-8c9c-a56408668126"
+      [32m+[0m[0m supported_features    = (known after apply)
+      [32m+[0m[0m tags                  = (known after apply)
+      [32m+[0m[0m vpc_id                = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+      [32m+[0m[0m vpc_ingress_address   = (known after apply)
+      [32m+[0m[0m vpcep_service_address = (known after apply)
+      [32m+[0m[0m vpcep_service_name    = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  [32m+[0m[0m apig_api_url = (known after apply)
+[0m[1mhuaweicloud_apig_instance.click_log_api: Creating...[0m[0m
+[33m鈺?[0m[0m
+[33m鈹?[0m [0m[1m[33mWarning: [0m[0m[1mResource targeting is in effect[0m
+[33m鈹?[0m [0m
+[33m鈹?[0m [0m[0mYou are creating a plan with the -target option, which means that the
+[33m鈹?[0m [0mresult of this plan may not represent all of the changes requested by the
+[33m鈹?[0m [0mcurrent configuration.
+[33m鈹?[0m [0m
+[33m鈹?[0m [0mThe -target option is not for routine use, and is provided only for
+[33m鈹?[0m [0mexceptional situations such as recovering from errors or mistakes, or when
+[33m鈹?[0m [0mTerraform specifically suggests to use it as part of an error message.
+[33m鈺?[0m[0m
+[33m鈺?[0m[0m
+[33m鈹?[0m [0m[1m[33mWarning: [0m[0m[1mApplied changes may be incomplete[0m
+[33m鈹?[0m [0m
+[33m鈹?[0m [0m[0mThe plan was created with the -target option in effect, so some changes
+[33m鈹?[0m [0mrequested in the configuration may have been ignored and the output values
+[33m鈹?[0m [0mmay not be fully updated. Run the following command to verify that no other
+[33m鈹?[0m [0mchanges are pending:
+[33m鈹?[0m [0m    terraform plan
+[33m鈹?[0m [0m
+[33m鈹?[0m [0mNote that the -target option is not suitable for routine use, and is
+[33m鈹?[0m [0mprovided only for exceptional situations such as recovering from errors or
+[33m鈹?[0m [0mmistakes, or when Terraform specifically suggests to use it as part of an
+[33m鈹?[0m [0merror message.
+[33m鈺?[0m[0m
+[31m鈺?[0m[0m
+[31m鈹?[0m [0m[1m[31mError: [0m[0m[1merror creating dedicated instance: Internal Server Error: [POST https://apig.cn-north-4.myhuaweicloud.com/v2/cc2cb3d01b0c46798d77c4cd8ecf6b7e/apigw/instances], request_id: 7f87c684647bb9804dd4d005bf917f2a, error message: {
+[31m鈹?[0m [0m  "error_code" : "APIC.9999",
+[31m鈹?[0m [0m  "error_msg" : "Internal server error"
+[31m鈹?[0m [0m}[0m
+[31m鈹?[0m [0m
+[31m鈹?[0m [0m[0m  with huaweicloud_apig_instance.click_log_api,
+[31m鈹?[0m [0m  on apig.tf line 1, in resource "huaweicloud_apig_instance" "click_log_api":
+[31m鈹?[0m [0m   1: resource "huaweicloud_apig_instance" "click_log_api" [4m{[0m[0m
+[31m鈹?[0m [0m
+[31m鈺?[0m[0m

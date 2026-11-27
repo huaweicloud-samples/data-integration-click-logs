@@ -1,0 +1,35 @@
+﻿=== state show apig_instance ===
+# huaweicloud_apig_instance.click_log_api:
+resource "huaweicloud_apig_instance" "click_log_api" {
+    availability_zones              = [
+        "cn-north-4a",
+    ]
+    bandwidth_size                  = 0
+    create_time                     = "2026-09-17T16:25:41+08:00"
+    created_at                      = "2026-09-17T16:25:41+08:00"
+    description                     = [90mnull[0m[0m
+    edition                         = "BASIC"
+    egress_address                  = [90mnull[0m[0m
+    elb_ids                         = []
+    enterprise_project_id           = "0"
+    id                              = "9ffec2f3ed344cf48ea5816fe3a80093"
+    ingress_address                 = [90mnull[0m[0m
+    ingress_bandwidth_charging_mode = [90mnull[0m[0m
+    ingress_bandwidth_size          = 0
+    ipv6_enable                     = false
+    loadbalancer_provider           = "elb"
+    maintain_begin                  = "02:00:00"
+    maintain_end                    = "06:00:00"
+    name                            = "data-integration-click-logs-apig"
+    region                          = "cn-north-4"
+    security_group_id               = "865201c6-f845-4bfe-88aa-2a2e4bee3366"
+    status                          = "Installing"
+    subnet_id                       = "edc831d8-3ada-442c-8c9c-a56408668126"
+    supported_features              = []
+    tags                            = {}
+    vpc_id                          = "96df06cd-5609-4eca-91ed-9ae85aa5b2ce"
+    vpc_ingress_address             = "10.0.1.187"
+    vpcep_service_address           = "cn-north-4.apig.ca9ae191-0a6e-46ca-b04e-7eaa079180af"
+    vpcep_service_name              = "apig"
+}
+
